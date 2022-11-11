@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # A user can delete a bookmark from a list. How can we make a delete link again?
   # DELETE "bookmarks/25"
 
+  root 'list#index'
+
   resources :lists, only: [:index, :show, :new, :create] do
     resources :bookmarks, only: [:new, :create]
   end
